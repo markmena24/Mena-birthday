@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Mena Magdy! 🎉</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+            transition: all 1s ease-in-out;
+        }
+
+        /* Background Themes */
+        .bg-theme-1 {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease infinite;
+        }
+
+        .bg-theme-2 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background-image: 
+                radial-gradient(circle at 20% 80%, #ff6b6b 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, #4ecdc4 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, #feca57 0%, transparent 50%);
+        }
+
+        .bg-theme-3 {
+            background: linear-gradient(45deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+            background-image: 
+                repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.1) 35px, rgba(255,255,255,.1) 70px),
+                repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(0,0,0,.05) 35px, rgba(0,0,0,.05) 70px);
+        }
+
+        .bg-theme-4 {
+            background: linear-gradient(60deg, #29323c 0%, #485563 100%);
+            background-image: 
+                radial-gradient(circle at 50% 50%, #ff6b6b 0%, transparent 30%),
+                radial-gradient(circle at 25% 25%, #4ecdc4 0%, transparent 30%),
+                radial-gradient(circle at 75% 75%, #feca57 0%, transparent 30%),
+                radial-gradient(circle at 75% 25%, #ff9a9e 0%, transparent 30%),
+                radial-gradient(circle at 25% 75%, #96ceb4 0%, transparent 30%);
+        }
+
+        .bg-theme-5 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background-image: 
+                linear-gradient(45deg, #ff6b6b 25%, transparent 25%), 
+                linear-gradient(-45deg, #4ecdc4 25%, transparent 25%), 
+                linear-gradient(45deg, transparent 75%, #feca57 75%), 
+                linear-gradient(-45deg, transparent 75%, #ff9a9e 75%);
+            background-size: 60px 60px;
+            background-position: 0 0, 0 30px, 30px -30px, -30px 0px;
+        }
+
+        .bg-theme-6 {
+            background: radial-gradient(circle, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57, #ff9a9e);
+            background-size: 300% 300%;
+            animation: radialPulse 10s ease infinite;
+        }
+
+        .bg-theme-7 {
+            background: linear-gradient(45deg, #12c2e9, #c471ed, #f64f59);
+            background-size: 600% 600%;
+            animation: gradientShift 12s ease infinite;
+        }
+
+        .bg-theme-8 {
+            background: #1a1a2e;
+            background-image: 
+                radial-gradient(2px 2px at 20px 30px, #eee, transparent),
+                radial-gradient(2px 2px at 40px 70px, #ff6b6b, transparent),
+                radial-gradient(1px 1px at 90px 40px, #4ecdc4, transparent),
+                radial-gradient(1px 1px at 130px 80px, #feca57, transparent),
+                radial-gradient(2px 2px at 160px 30px, #ff9a9e, transparent);
+            background-repeat: repeat;
+            background-size: 200px 100px;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes radialPulse {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 100% 100%; }
+            100% { background-position: 0% 0%; }
+        }
+
+        .birthday-title {
+            font-family: 'Fredoka One', cursive;
+            text-shadow: 3px 3px 0px rgba(0,0,0,0.2);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #f39c12;
+            animation: confetti-fall 3s linear infinite;
+        }
+
+        .confetti:nth-child(1) { left: 10%; animation-delay: 0s; background: #e74c3c; }
+        .confetti:nth-child(2) { left: 20%; animation-delay: 0.5s; background: #3498db; }
+        .confetti:nth-child(3) { left: 30%; animation-delay: 1s; background: #2ecc71; }
+        .confetti:nth-child(4) { left: 40%; animation-delay: 1.5s; background: #f39c12; }
+        .confetti:nth-child(5) { left: 50%; animation-delay: 2s; background: #9b59b6; }
+        .confetti:nth-child(6) { left: 60%; animation-delay: 0.3s; background: #e67e22; }
+        .confetti:nth-child(7) { left: 70%; animation-delay: 0.8s; background: #1abc9c; }
+        .confetti:nth-child(8) { left: 80%; animation-delay: 1.3s; background: #e91e63; }
+        .confetti:nth-child(9) { left: 90%; animation-delay: 1.8s; background: #8e44ad; }
+
+        @keyframes confetti-fall {
+            0% { transform: translateY(-100vh) rotate(0deg); }
+            100% { transform: translateY(100vh) rotate(360deg); }
+        }
+
+        .countdown-box {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .cake {
+            position: relative;
+            margin: 0 auto;
+            width: 300px;
+            height: 200px;
+        }
+
+        .cake-layer {
+            position: absolute;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .cake-layer-1 {
+            bottom: 0;
+            width: 280px;
+            height: 60px;
+            background: linear-gradient(45deg, #8b4513, #a0522d);
+            left: 10px;
+        }
+
+        .cake-layer-2 {
+            bottom: 50px;
+            width: 240px;
+            height: 50px;
+            background: linear-gradient(45deg, #ff69b4, #ff1493);
+            left: 30px;
+        }
+
+        .cake-layer-3 {
+            bottom: 90px;
+            width: 200px;
+            height: 40px;
+            background: linear-gradient(45deg, #ffd700, #ffb347);
+            left: 50px;
+        }
+
+        .candle {
+            position: absolute;
+            width: 8px;
+            height: 40px;
+            background: linear-gradient(to bottom, #ff6b6b, #ff4757);
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .candle::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 12px;
+            height: 12px;
+            background: radial-gradient(circle, #ffa502, #ff6348);
+            border-radius: 50%;
+            animation: flicker 1s ease-in-out infinite alternate;
+        }
+
+        .candle.blown::before {
+            display: none;
+        }
+
+        .candle.blown {
+            background: linear-gradient(to bottom, #666, #333);
+        }
+
+        @keyframes flicker {
+            0% { transform: translateX(-50%) scale(1); }
+            100% { transform: translateX(-50%) scale(1.1) rotate(2deg); }
+        }
+
+        .candle-1 { top: 50px; left: 80px; }
+        .candle-2 { top: 50px; left: 120px; }
+        .candle-3 { top: 50px; left: 160px; }
+        .candle-4 { top: 50px; left: 200px; }
+        .candle-5 { top: 50px; left: 240px; }
+
+        .birthday-photo {
+            background: rgba(255, 255, 255, 0.9);
+            border: 3px solid #ff6b6b;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .birthday-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .celebration-message {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .blow-instruction {
+            background: linear-gradient(45deg, #ff9a9e, #fecfef);
+            border-radius: 15px;
+            animation: wiggle 1s ease-in-out infinite;
+        }
+
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(1deg); }
+            75% { transform: rotate(-1deg); }
+        }
+
+        .theme-indicator {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            z-index: 1000;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body class="relative overflow-x-hidden bg-theme-1">
+    <!-- Theme Indicator -->
+    <div class="theme-indicator">
+        <span id="themeText">🎨 Rainbow Gradient</span>
+    </div>
+
+    <!-- Confetti Animation -->
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+
+    <div class="container mx-auto px-4 py-8">
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <h1 class="birthday-title text-6xl md:text-8xl text-white mb-4">
+                🎉 Happy Birthday 🎉
+            </h1>
+            <h2 class="text-4xl md:text-5xl text-white font-bold mb-2">
+                Mena Magdy!
+            </h2>
+            <div class="text-2xl text-white">
+                <i class="fas fa-birthday-cake"></i> 
+                <i class="fas fa-gift"></i> 
+                <i class="fas fa-balloon"></i>
+            </div>
+        </div>
+
+        <!-- Photo Section -->
+        <div class="max-w-md mx-auto mb-8">
+            <div class="birthday-photo h-64">
+                <img src="https://page1.genspark.site/v1/base64_upload/e56e56e1a90697badd184fdce1ac844f" alt="Mena Magdy Birthday Photo" />
+            </div>
+        </div>
+
+        <!-- Countdown Timer -->
+        <div class="countdown-box max-w-2xl mx-auto p-8 mb-8 text-center">
+            <h3 class="text-3xl font-bold text-gray-800 mb-6">
+                <i class="fas fa-clock text-blue-500"></i> Birthday Countdown
+            </h3>
+            <div id="countdown" class="grid grid-cols-4 gap-4 text-center">
+                <div class="bg-red-500 text-white p-4 rounded-lg">
+                    <div class="text-3xl font-bold" id="days">0</div>
+                    <div class="text-sm">Days</div>
+                </div>
+                <div class="bg-blue-500 text-white p-4 rounded-lg">
+                    <div class="text-3xl font-bold" id="hours">0</div>
+                    <div class="text-sm">Hours</div>
+                </div>
+                <div class="bg-green-500 text-white p-4 rounded-lg">
+                    <div class="text-3xl font-bold" id="minutes">0</div>
+                    <div class="text-sm">Minutes</div>
+                </div>
+                <div class="bg-purple-500 text-white p-4 rounded-lg">
+                    <div class="text-3xl font-bold" id="seconds">0</div>
+                    <div class="text-sm">Seconds</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Virtual Cake -->
+        <div class="max-w-lg mx-auto mb-8">
+            <div class="blow-instruction text-center p-4 mb-4">
+                <h3 class="text-xl font-bold text-gray-800 mb-2">
+                    <i class="fas fa-wind text-blue-500"></i> Make a Wish & Blow the Candles!
+                </h3>
+                <p class="text-gray-700">Click on each candle to blow it out</p>
+            </div>
+            
+            <div class="cake">
+                <div class="cake-layer cake-layer-1"></div>
+                <div class="cake-layer cake-layer-2"></div>
+                <div class="cake-layer cake-layer-3"></div>
+                
+                <div class="candle candle-1" onclick="blowCandle(this)"></div>
+                <div class="candle candle-2" onclick="blowCandle(this)"></div>
+                <div class="candle candle-3" onclick="blowCandle(this)"></div>
+                <div class="candle candle-4" onclick="blowCandle(this)"></div>
+                <div class="candle candle-5" onclick="blowCandle(this)"></div>
+            </div>
+            
+            <div class="text-center mt-6">
+                <button onclick="relightCandles()" class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105">
+                    <i class="fas fa-fire"></i> Relight Candles
+                </button>
+            </div>
+        </div>
+
+        <!-- Birthday Message -->
+        <div class="celebration-message max-w-2xl mx-auto p-8 text-center">
+            <h3 class="text-3xl font-bold text-gray-800 mb-4">
+                🎊 Birthday Wishes 🎊
+            </h3>
+            <p class="text-lg text-gray-700 mb-4">
+                Wishing you a fantastic birthday filled with joy, laughter, and all your favorite things! 
+                May this new year of life bring you endless happiness, amazing adventures, and dreams come true.
+            </p>
+            <p class="text-xl font-bold text-pink-600">
+                Have an absolutely wonderful day, Mena! 🎈🎂🎁
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Background Theme Changer
+        const themes = [
+            { class: 'bg-theme-1', name: '🎨 Rainbow Gradient' },
+            { class: 'bg-theme-2', name: '🎈 Balloon Party' },
+            { class: 'bg-theme-3', name: '🎊 Confetti Celebration' },
+            { class: 'bg-theme-4', name: '✨ Starry Night Party' },
+            { class: 'bg-theme-5', name: '🎁 Gift Pattern' },
+            { class: 'bg-theme-6', name: '🌈 Radial Rainbow' },
+            { class: 'bg-theme-7', name: '💫 Cosmic Celebration' },
+            { class: 'bg-theme-8', name: '⭐ Twinkling Stars' }
+        ];
+        
+        let currentThemeIndex = 0;
+        
+        function changeBackgroundTheme() {
+            const body = document.body;
+            const themeText = document.getElementById('themeText');
+            
+            // Remove current theme
+            themes.forEach(theme => {
+                body.classList.remove(theme.class);
+            });
+            
+            // Add new theme
+            currentThemeIndex = (currentThemeIndex + 1) % themes.length;
+            body.classList.add(themes[currentThemeIndex].class);
+            themeText.textContent = themes[currentThemeIndex].name;
+        }
+        
+        // Change theme every 5 seconds
+        setInterval(changeBackgroundTheme, 5000);
+
+        // Countdown Timer
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const birthday = new Date();
+            birthday.setDate(birthday.getDate() + 4); // 4 days from now
+            birthday.setHours(0, 0, 0, 0); // Set to midnight
+            
+            const distance = birthday - now;
+            
+            if (distance > 0) {
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+                document.getElementById('days').innerText = days;
+                document.getElementById('hours').innerText = hours;
+                document.getElementById('minutes').innerText = minutes;
+                document.getElementById('seconds').innerText = seconds;
+            } else {
+                document.getElementById('countdown').innerHTML = '<div class="text-4xl font-bold text-green-600">🎉 IT\'S BIRTHDAY TIME! 🎉</div>';
+            }
+        }
+        
+        // Update countdown every second
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+        
+        // Candle blowing functionality
+        let blownCandles = 0;
+        const totalCandles = 5;
+        
+        function blowCandle(candle) {
+            if (!candle.classList.contains('blown')) {
+                candle.classList.add('blown');
+                blownCandles++;
+                
+                // Add blow effect
+                const blowEffect = document.createElement('div');
+                blowEffect.innerHTML = '💨';
+                blowEffect.style.position = 'absolute';
+                blowEffect.style.fontSize = '24px';
+                blowEffect.style.animation = 'blowAnimation 1s ease-out forwards';
+                blowEffect.style.left = candle.offsetLeft + 'px';
+                blowEffect.style.top = (candle.offsetTop - 20) + 'px';
+                candle.parentElement.appendChild(blowEffect);
+                
+                setTimeout(() => {
+                    blowEffect.remove();
+                }, 1000);
+                
+                // Check if all candles are blown
+                if (blownCandles === totalCandles) {
+                    setTimeout(() => {
+                        alert('🎉 Congratulations! You blew out all the candles! Your wish will come true! 🎉');
+                        createFireworks();
+                    }, 500);
+                }
+            }
+        }
+        
+        function relightCandles() {
+            const candles = document.querySelectorAll('.candle');
+            candles.forEach(candle => {
+                candle.classList.remove('blown');
+            });
+            blownCandles = 0;
+        }
+        
+        function createFireworks() {
+            for (let i = 0; i < 20; i++) {
+                setTimeout(() => {
+                    const firework = document.createElement('div');
+                    firework.innerHTML = '✨';
+                    firework.style.position = 'fixed';
+                    firework.style.left = Math.random() * window.innerWidth + 'px';
+                    firework.style.top = Math.random() * window.innerHeight + 'px';
+                    firework.style.fontSize = '24px';
+                    firework.style.zIndex = '1000';
+                    firework.style.animation = 'fireworkAnimation 2s ease-out forwards';
+                    document.body.appendChild(firework);
+                    
+                    setTimeout(() => {
+                        firework.remove();
+                    }, 2000);
+                }, i * 100);
+            }
+        }
+        
+        // Add CSS animations dynamically
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes blowAnimation {
+                0% { transform: translateX(0) scale(1); opacity: 1; }
+                100% { transform: translateX(30px) scale(1.5); opacity: 0; }
+            }
+            
+            @keyframes fireworkAnimation {
+                0% { transform: scale(0) rotate(0deg); opacity: 1; }
+                50% { transform: scale(1.5) rotate(180deg); opacity: 0.8; }
+                100% { transform: scale(0) rotate(360deg); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Add some birthday music on page load (optional)
+        function playBirthdayCheer() {
+            // You can add audio here if needed
+            console.log('🎵 Happy Birthday to Mena! 🎵');
+        }
+        
+        // Initialize
+        window.addEventListener('load', function() {
+            playBirthdayCheer();
+            
+            // Add random balloon floating animation
+            setInterval(() => {
+                const balloon = document.createElement('div');
+                balloon.innerHTML = '🎈';
+                balloon.style.position = 'fixed';
+                balloon.style.bottom = '-50px';
+                balloon.style.left = Math.random() * window.innerWidth + 'px';
+                balloon.style.fontSize = '30px';
+                balloon.style.zIndex = '999';
+                balloon.style.animation = 'balloonFloat 8s linear forwards';
+                document.body.appendChild(balloon);
+                
+                setTimeout(() => {
+                    balloon.remove();
+                }, 8000);
+            }, 3000);
+        });
+        
+        // Balloon animation
+        const balloonStyle = document.createElement('style');
+        balloonStyle.textContent = `
+            @keyframes balloonFloat {
+                0% { transform: translateY(0) rotate(0deg); }
+                100% { transform: translateY(-100vh) rotate(360deg); }
+            }
+        `;
+        document.head.appendChild(balloonStyle);
+    </script>
+</body>
+</html>
